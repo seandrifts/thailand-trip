@@ -131,7 +131,7 @@ function MapLink({
 function BookingStatus({
   id
 }) {
-  const [s, setS] = useState(() => localStorage.getItem("book-" + id) || "none");
+  const [s, setS] = useState(() => localStorage.getItem("tt7d-book-" + id) || "none");
   const cycle = e => {
     e.stopPropagation();
     const order = {
@@ -141,7 +141,7 @@ function BookingStatus({
     };
     const next = order[s];
     setS(next);
-    localStorage.setItem("book-" + id, next);
+    localStorage.setItem("tt7d-book-" + id, next);
   };
   const label = {
     none: "+ 加入訂位",
@@ -311,13 +311,13 @@ function Stat({
 function FamilyRoster() {
   const [names, setNames] = useState(() => {
     try {
-      return JSON.parse(localStorage.getItem("family")) || TRIP.family;
+      return JSON.parse(localStorage.getItem("tt7d-family")) || TRIP.family;
     } catch {
       return TRIP.family;
     }
   });
   useEffect(() => {
-    localStorage.setItem("family", JSON.stringify(names));
+    localStorage.setItem("tt7d-family", JSON.stringify(names));
   }, [names]);
   return /*#__PURE__*/React.createElement("div", {
     className: "roster"
@@ -337,13 +337,13 @@ function Checklist({
 }) {
   const [checked, setChecked] = useState(() => {
     try {
-      return JSON.parse(localStorage.getItem("chk-" + storageKey)) || {};
+      return JSON.parse(localStorage.getItem("tt7d-chk-" + storageKey)) || {};
     } catch {
       return {};
     }
   });
   useEffect(() => {
-    localStorage.setItem("chk-" + storageKey, JSON.stringify(checked));
+    localStorage.setItem("tt7d-chk-" + storageKey, JSON.stringify(checked));
   }, [checked, storageKey]);
   const total = items.length;
   const done = items.filter(i => checked[i]).length;
@@ -620,14 +620,14 @@ function FlightHotelCard() {
     try {
       return {
         ...defaultFH,
-        ...JSON.parse(localStorage.getItem("flighthotel_v2") || "{}")
+        ...JSON.parse(localStorage.getItem("tt7d-flighthotel_v2") || "{}")
       };
     } catch {
       return defaultFH;
     }
   });
   useEffect(() => {
-    localStorage.setItem("flighthotel_v2", JSON.stringify(data));
+    localStorage.setItem("tt7d-flighthotel_v2", JSON.stringify(data));
   }, [data]);
   const upd = (k, v) => setData({
     ...data,
