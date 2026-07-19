@@ -2,7 +2,7 @@
  * 策略：核心資源預快取（cache-first），HTML network-first（有網路拿最新版），
  * Google Fonts 執行期快取，天氣 API 一律走網路（widget 自帶錯誤處理）。
  * 部署新版時 bump CACHE_VERSION 讓舊快取失效。 */
-const CACHE_VERSION = "tt7d-v3";
+const CACHE_VERSION = "tt7d-v4";
 const PRECACHE = [
   "./",
   "index.html",
