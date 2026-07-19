@@ -254,7 +254,7 @@ function Home({
     className: "cd-meta"
   }, m.startDate.replace(/-/g, "/"), " \u2013 ", m.endDate.replace(/-/g, "/")))))), /*#__PURE__*/React.createElement("div", {
     className: "live-row"
-  }, /*#__PURE__*/React.createElement(WeatherWidget, null)), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement(WidgetBoundary, null, /*#__PURE__*/React.createElement(WeatherWidget, null))), /*#__PURE__*/React.createElement("h2", {
     className: "h2"
   }, "\u822A\u73ED & \u98EF\u5E97 ", /*#__PURE__*/React.createElement("span", {
     className: "h2-en"
@@ -738,11 +738,36 @@ const WMO = {
   99: ["⛈️", "強雷雨"]
 };
 const wcode = c => WMO[c] || ["🌡️", "—"];
+
+// 任一即時 widget 掛掉時只顯示錯誤卡，不讓整個 app 白畫面
+class WidgetBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) return /*#__PURE__*/React.createElement("div", {
+      className: "widget-card"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "widget-err"
+    }, "小工具載入失敗，請稍後再試"));
+    return this.props.children;
+  }
+}
 function WeatherWidget() {
   const [data, setData] = useState(null);
   const [err, setErr] = useState(false);
   useEffect(() => {
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=13.7563&longitude=100.5018&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&timezone=Asia/Bangkok&forecast_days=7").then(r => r.json()).then(setData).catch(() => setErr(true));
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=13.7563&longitude=100.5018&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&timezone=Asia/Bangkok&forecast_days=7").then(r => {
+      if (!r.ok) throw new Error("http " + r.status);
+      return r.json();
+    }).then(d => {
+      if (!d || !d.current || !d.daily) throw new Error("bad payload");
+      setData(d);
+    }).catch(() => setErr(true));
   }, []);
   if (err) return /*#__PURE__*/React.createElement("div", {
     className: "widget-card weather-card"

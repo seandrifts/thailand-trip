@@ -23,6 +23,8 @@
     --gold-bg: #ecdfc0;
     --teal-bg: #d9dde7;       /* 淡霧藍 */
     --wine-bg: #e9d4d8;
+    --card: var(--paper);     /* 備選卡片背景（原版未定義，卡片變透明） */
+    --accent: var(--saffron); /* 備選日期標題底線 */
   }
 
   * { box-sizing: border-box; }
@@ -447,7 +449,10 @@
     margin-left: 6px;
     transition: all .15s;
     vertical-align: middle;
+    position: relative;
   }
+  /* 視覺不變，觸控範圍擴到 44px（手機好點） */
+  .map-link::after { content: ""; position: absolute; inset: -9px; }
   .map-link:hover { background: var(--saffron); transform: scale(1.08); }
 
   .book-pill {
@@ -735,11 +740,40 @@
     .tab { padding: 10px 14px; font-size: 13px; }
     .weather-days { grid-template-columns: repeat(7, 1fr); gap: 3px; }
     .wd { padding: 4px 1px; }
-    .wd-d { font-size: 9px; }
+    .wd-d { font-size: 10px; }
     .wd-i { font-size: 14px; }
     .wd-t { font-size: 10px; }
-    .wd-p { font-size: 9px; }
+    .wd-p { font-size: 10px; }
     .fh-flight { grid-template-columns: 1fr; }
     .bud-head, .bud-row { grid-template-columns: 1.4fr 1fr 1fr 1fr 30px; gap: 6px; font-size: 12px; }
     .bud-cat-in, .bud-amt-in, .bud-per-in { font-size: 13px; padding: 4px 6px; }
   }
+
+
+
+.extras-group { margin-bottom: 32px; }
+.extras-day-h { font-size: 15px; font-weight: 700; color: var(--ink); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.extras-date { font-weight: 400; color: var(--ink-2); font-size: 13px; }
+.extras-area-label { font-weight: 400; color: var(--ink-3); font-size: 13px; }
+.extras-list { display: flex; flex-direction: column; gap: 10px; }
+.extras-card { background: var(--card); border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line-soft); }
+.extras-card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.extras-badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; flex-shrink: 0; }
+.xt-food { background: #fff3e0; color: #e65100; }
+.xt-shop { background: #e8f5e9; color: #2e7d32; }
+.xt-spa  { background: #e3f2fd; color: #1565c0; }
+.xt-spot { background: #f3e5f5; color: #6a1b9a; }
+.extras-name { font-weight: 600; font-size: 14px; color: var(--ink); flex: 1; }
+.extras-price { font-size: 12px; color: var(--ink-3); }
+.extras-loc { font-size: 12px; color: var(--ink-3); margin-bottom: 4px; }
+.extras-note { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+.extras-empty { text-align: center; color: var(--ink-3); padding: 40px 0; font-size: 14px; }
+
+/* 尊重系統減少動態偏好：關閉裝飾性動畫 */
+@media (prefers-reduced-motion: reduce) {
+  .page { animation: none; }
+  .confetti { display: none; }
+  .confetti span { animation: none !important; }
+  .today-badge { animation: none !important; }
+  * { transition-duration: .01ms !important; }
+}
