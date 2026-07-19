@@ -5,6 +5,13 @@
     font-style: normal;
     font-display: swap;
   }
+  @font-face {
+    font-family: "Kamabit";
+    src: url("../fonts/kamabit.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
   :root {
     /* 文青風：米白紙 + 赤陶 + 暗墨青藍 + 灰梅紫 */
     --bg: #f1e8d3;
@@ -28,10 +35,10 @@
   }
 
   * { box-sizing: border-box; }
-  /* 統一使用六分糖字體（泰文仍 fallback 至 Sarabun） */
+  /* 統一使用粉圓字體（泰文仍 fallback 至 Sarabun） */
   body, button, input, textarea, select,
-  .brand-zh, .brand-en, .hero-title, .page-title, .page-en,
-  .h2, .h2-en, .kicker, .cd-label, .cd-num, .cd-unit, .cd-meta,
+  .brand-en, .page-en,
+  .h2-en, .kicker, .cd-label, .cd-num, .cd-unit, .cd-meta,
   .stat-label, .stat-value, .stat-sub,
   .dc-day, .dc-date, .dc-title, .dc-theme,
   .tl-day-label, .tl-day-n, .tl-date, .tl-title, .block-time, .tip-tag,
@@ -44,6 +51,10 @@
   .fh-h, .bud-total-l, .bud-total-v, .bud-total-thb, .bud-sub,
   .bud-meta label, .bud-cat-in, .book-pill {
     font-family: "Openhuninn", "Sarabun", "Helvetica Neue", sans-serif !important;
+  }
+  /* 大標題用柑仔蜜，做出層次（缺字 fallback 粉圓） */
+  .brand-zh, .hero-title, .page-title, .h2 {
+    font-family: "Kamabit", "Openhuninn", "Sarabun", "Helvetica Neue", sans-serif !important;
   }
   html, body { margin: 0; padding: 0; overflow-x: hidden; }
   body {
