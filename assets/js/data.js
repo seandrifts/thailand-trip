@@ -68,7 +68,17 @@ window.TRIP = {
       tips: "唐人街晚餐人很多，建議 18:30 前到，避開尖峰排隊時間。",
     },
     {
-      day: 5, date: "8/22", weekday: "六", title: "鐵軌從市場中間穿過，每天都這樣",
+      day: 5, date: "8/22", weekday: "六", title: "一萬個攤位，一萬個下手的理由",
+      theme: "Market Day",
+      summary: "洽圖洽週末市集 → Lotus 超市採購伴手禮",
+      blocks: [
+        { time: "早上", icon: "🎪", title: "洽圖洽週末市集 Chatuchak", mapurl: "https://maps.app.goo.gl/RSUf69had16Ssud78", detail: "1.1 萬個攤位，全家可以分頭逛，有服飾、植物、古董、零食什麼都有，建議早去" },
+        { time: "晚上", icon: "🛒", title: "Lotus 超市", mapurl: "https://maps.app.goo.gl/Mw4sEXpoJSxtNTHL8", detail: "採購伴手禮跟零食的好地方，泰式調味料、椰糖、泡麵都好買" },
+      ],
+      tips: "洽圖洽週末限定（六、日），早上 9 點開門，越早越涼快。",
+    },
+    {
+      day: 6, date: "8/23", weekday: "日", title: "鐵軌從市場中間穿過，每天都這樣",
       theme: "Day Trip",
       summary: "噗市場 → 水門寺 → 美功鐵道市場 → 安帕瓦水上市場 → Chula Banthatthong",
       blocks: [
@@ -79,16 +89,6 @@ window.TRIP = {
         { time: "晚上", icon: "🍜", title: "Chula Banthatthong", mapurl: "https://maps.app.goo.gl/jTwxutwWBR5eTG259", detail: "回曼谷市區後的晚餐選擇，朱拉隆功大學周邊餐廳街" },
       ],
       tips: "全程包車接送，水門寺 → 美功 → 安帕瓦一條龍不用擔心交通，司機會在附近等。",
-    },
-    {
-      day: 6, date: "8/23", weekday: "日", title: "一萬個攤位，一萬個下手的理由",
-      theme: "Market Day",
-      summary: "洽圖洽週末市集 → Lotus 超市採購伴手禮",
-      blocks: [
-        { time: "早上", icon: "🎪", title: "洽圖洽週末市集 Chatuchak", mapurl: "https://maps.app.goo.gl/RSUf69had16Ssud78", detail: "1.1 萬個攤位，全家可以分頭逛，有服飾、植物、古董、零食什麼都有，建議早去" },
-        { time: "晚上", icon: "🛒", title: "Lotus 超市", mapurl: "https://maps.app.goo.gl/Mw4sEXpoJSxtNTHL8", detail: "採購伴手禮跟零食的好地方，泰式調味料、椰糖、泡麵都好買" },
-      ],
-      tips: "洽圖洽週末限定（六、日），早上 9 點開門，越早越涼快。",
     },
         {
       day: 7, date: "8/24", weekday: "一", title: "行李變重了，人卻不想走",
@@ -151,7 +151,11 @@ window.TRIP = {
       { type: "food", name: "王子戲院豬肉粥", area: "Charoen Krung / Bang Rak", note: "曼谷老城知名豬肉粥，4.3 分、3300 多則評論，就開在老戲院旁邊，稀飯滑嫩配料豐富，在地人的早餐或消夜選擇", mapurl: "https://maps.app.goo.gl/syxuLasCLiFGFydXA" },
       { type: "food", name: "Mother Roaster Talat Noi", area: "Talat Noi", note: "塔拉諾巷弄裡的質感咖啡館，4.4 分、1700 多則評論，自家烘焙豆，老倉庫改建的工業風空間，逛完街頭藝術進來坐一下很對味", mapurl: "https://maps.app.goo.gl/t9Nm1g2teviZoUvd8" },
     ]},
-    { day: 5, date: "8/22", weekday: "六", area: "水門寺一帶", items: [
+    { day: 5, date: "8/22", weekday: "六", area: "洽圖洽", items: [
+      { type: "food", name: "Roasted Honey Glazed Pork Mae Sumontha", area: "Chatuchak", note: "洽圖洽市集旁的烤蜜汁豬肉名店，4.5 分近 300 則評論，豬肉烤得焦脆香甜油光發亮，配白飯份量足又超值，逛完市集來一頓在地午餐最剛好", mapurl: "https://maps.app.goo.gl/9zd27WaoJ2ebZnuW7" },
+      { type: "shop", name: "Mixt Chatuchak", area: "Chatuchak", note: "洽圖洽旁的現代多層商場，4.3 分超過 5000 則評論，集合服飾、書籍、家居用品與大型美食廣場，逛完戶外市場熱到受不了時進來吹冷氣繼續血拼", mapurl: "https://maps.app.goo.gl/4ErxBuqEiZnZJE1u8" },
+    ]},
+    { day: 6, date: "8/23", weekday: "日", area: "水門寺一帶", items: [
       { type: "food", name: "Ni-Ang Shaved Ice Cream", area: "Talat Phlu", note: "塔拉普路在地刨冰攤，4.2 分近 900 則評論，以泰式古早味刨冰聞名，配料豐富多彩、口味道地，逛完噗市場附近就能找到，消暑必吃", mapurl: "https://maps.app.goo.gl/SjCrP5iRxTZ7szNa7" },
       { type: "food", name: "李寶玉 百年韭菜粿", area: "Talat Phlu", note: "百年老字號素食點心店，4.6 高分，韭菜粿以米漿皮包素餡蒸製而成，是傳統廣東早點，配上辣椒醬鹹甜交織，在地人才知道的口袋名單，早市限定遲到就沒了", mapurl: "https://maps.app.goo.gl/DXfr4ChFpdfhWrrYA" },
       { type: "spot", name: "Uruea Cafe Boat Pier", area: "Bangkok Yai", note: "昭披耶河畔的秘境咖啡碼頭，正對河中央大型佛像取景，是近年 IG 熱門打卡點，坐在木棧道喝飲料看河景，傳統長尾船不時穿梭而過，距塔拉普路步行可達", mapurl: "https://maps.app.goo.gl/eYLSiYxYXsDkQoxr9" },
@@ -163,10 +167,6 @@ window.TRIP = {
       { type: "food", name: "Jae Wan", area: "Banthat Thong", note: "超過 2300 則評論的泰式甜品老攤，椰汁糯米、芒果糯米等傳統泰甜一應俱全，價格超平實份量足，班他通路吃飽後的甜點收尾首選", mapurl: "https://maps.app.goo.gl/oZfEV76xJubYAcCD6" },
       { type: "food", name: "Bake A Wish Pastry", area: "Banthat Thong", note: "朱拉隆功大學旁的烘焙小店，鹽可頌是招牌必吃，外皮酥脆內層鬆軟鹹香恰到好處，傍晚才開門新鮮出爐超搶手，逛完晚餐前來一份剛剛好", mapurl: "https://maps.app.goo.gl/ZW3Wb4zjVYq4EUTw6" },
       { type: "food", name: "Mother Cows", area: "Banthat Thong", note: "牧場直送新鮮乳製品冰淇淋店，強調不加人工添加劑，以泰國本地牧場鮮奶製成各式冰淇淋與奶製甜品，Banthat Thong 吃一整圈後消暑收尾最剛好", mapurl: "https://maps.app.goo.gl/bZbH26nzuMdFj9Q56" },
-    ]},
-    { day: 6, date: "8/23", weekday: "日", area: "洽圖洽", items: [
-      { type: "food", name: "Roasted Honey Glazed Pork Mae Sumontha", area: "Chatuchak", note: "洽圖洽市集旁的烤蜜汁豬肉名店，4.5 分近 300 則評論，豬肉烤得焦脆香甜油光發亮，配白飯份量足又超值，逛完市集來一頓在地午餐最剛好", mapurl: "https://maps.app.goo.gl/9zd27WaoJ2ebZnuW7" },
-      { type: "shop", name: "Mixt Chatuchak", area: "Chatuchak", note: "洽圖洽旁的現代多層商場，4.3 分超過 5000 則評論，集合服飾、書籍、家居用品與大型美食廣場，逛完戶外市場熱到受不了時進來吹冷氣繼續血拼", mapurl: "https://maps.app.goo.gl/4ErxBuqEiZnZJE1u8" },
     ]},
   ],
 

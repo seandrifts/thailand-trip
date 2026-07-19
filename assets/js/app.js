@@ -290,7 +290,7 @@ function Home({
     className: "h2"
   }, "\u51FA\u767C\u524D To-Do"), /*#__PURE__*/React.createElement(Checklist, {
     storageKey: "predepart",
-    items: ["機票訂好：CI835（去）/ CI838（回）", "亞洲酒店已訂", "機場包車已預訂", "Day 3 Chom Arun 17:15 已訂位", "確認所有人護照效期 6 個月以上", "投保旅遊平安險", "Day 5 包車安排：水門寺 → 美功鐵道市場 → 安帕瓦", "Nikko Thai Massage 提前預約（Day 2 / Day 4 / Day 7）", "換泰銖現金（或出發後到 Super Rich 換）", "辦泰國 SIM 卡 / eSIM", "下載 Grab App + Google Maps 離線地圖", "備好藥品：止瀉藥、防蚊液、退燒藥"]
+    items: ["機票訂好：CI835（去）/ CI838（回）", "亞洲酒店已訂", "機場包車已預訂", "Day 3 Chom Arun 17:15 已訂位", "確認所有人護照效期 6 個月以上", "投保旅遊平安險", "Day 6 包車安排：水門寺 → 美功鐵道市場 → 安帕瓦", "Nikko Thai Massage 提前預約（Day 2 / Day 4 / Day 7）", "換泰銖現金（或出發後到 Super Rich 換）", "辦泰國 SIM 卡 / eSIM", "下載 Grab App + Google Maps 離線地圖", "備好藥品：止瀉藥、防蚊液、退燒藥"]
   }));
 }
 function Stat({
