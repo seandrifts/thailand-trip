@@ -30,13 +30,19 @@
   --saffron: #b9603a;       /* 赤陶 terracotta */
   --saffron-d: #8a4322;
   --saffron-l: #d4906a;
-  --teal: #37455c;          /* 暗墨青藍 */
-  --teal-d: #212a3c;
+  --sun: #f5a524;           /* 太陽黃橘（主題色） */
+  --sun-l: #ffcf6a;
+  --sun-d: #e07b1f;
+  --sun-deep: #a3550f;      /* 淺底上的文字用 */
+  --sun-ink: #4a2b09;       /* 黃橘底上的文字用 */
+  --sun-bg: #fbe7c2;
+  --espresso: #3b2c1e;      /* 深棕：畫面的定錨色，取代原本的深藍 */
+  --espresso-d: #241d15;
+  --rain: #6a7d96;          /* 降雨機率的冷色點綴 */
   --wine: #8a4a59;          /* 灰梅紫 */
   --wine-d: #6d3644;
   --gold: #c99646;
   --gold-bg: #f0e2c6;
-  --teal-bg: #dee2ea;
   --wine-bg: #ecd8dc;
   --card: var(--paper);
   --accent: var(--saffron);
@@ -152,12 +158,12 @@ body::before {
 .hdr-brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .brand-mark {
   width: 50px; height: 50px; border-radius: 16px;
-  background: linear-gradient(150deg, var(--teal), var(--teal-d));
-  color: var(--paper);
+  background: linear-gradient(150deg, var(--sun-l), var(--sun) 55%, var(--sun-d));
+  color: var(--sun-ink);
   display: grid; place-items: center;
   font-size: 24px; line-height: 1;
   flex-shrink: 0;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, .25) inset, 0 10px 22px -12px rgba(33, 42, 60, .9);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .45) inset, 0 10px 22px -12px rgba(224, 123, 31, .95);
   transition: transform .3s var(--ease);
 }
 .hdr:hover .brand-mark { transform: rotate(-6deg) scale(1.04); }
@@ -187,7 +193,7 @@ body::before {
 .tab::after {
   content: ""; position: absolute;
   left: 14px; right: 14px; bottom: -1px; height: 2.5px;
-  background: var(--saffron); border-radius: 3px;
+  background: linear-gradient(90deg, var(--sun), var(--sun-d)); border-radius: 3px;
   transform: scaleX(0); transform-origin: center;
   transition: transform .25s var(--ease);
 }
@@ -260,7 +266,7 @@ body::before {
   content: ""; display: block;
   width: 92px; height: 6px; margin-top: 22px;
   border-radius: 99px;
-  background: linear-gradient(90deg, var(--saffron), var(--gold));
+  background: linear-gradient(90deg, var(--sun-d), var(--sun-l));
 }
 .hero-sub { color: var(--ink-2); font-size: 16px; max-width: 470px; }
 .hero-cta { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
@@ -280,44 +286,45 @@ body::before {
 .btn-ghost:hover { transform: translateY(-2px); background: var(--paper); box-shadow: var(--sh-1); }
 .btn-primary:active, .btn-ghost:active { transform: translateY(0); }
 
+/* 倒數卡＝日出：亮黃 → 橘，字用深褐色才看得清楚 */
 .countdown-card {
-  background: linear-gradient(155deg, var(--teal) 0%, var(--teal-d) 100%);
-  color: var(--paper);
+  background: linear-gradient(155deg, var(--sun-l) 0%, var(--sun) 48%, var(--sun-d) 100%);
+  color: var(--sun-ink);
   border-radius: var(--r-xl); padding: 36px 28px;
-  box-shadow: var(--sh-3), 0 2px 0 rgba(255, 255, 255, .12) inset;
+  box-shadow: 0 30px 60px -30px rgba(196, 106, 20, .65), 0 2px 0 rgba(255, 255, 255, .4) inset;
   text-align: center;
   position: relative; overflow: hidden;
 }
 .countdown-card::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(circle at 22% 8%, rgba(250, 244, 228, .22), transparent 55%),
-    repeating-linear-gradient(45deg, transparent 0 14px, rgba(250, 244, 228, .045) 14px 15px);
+    radial-gradient(circle at 22% 8%, rgba(255, 252, 240, .55), transparent 58%),
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(255, 252, 240, .12) 14px 15px);
   pointer-events: none;
 }
 .countdown-card::after {
   content: ""; position: absolute;
   width: 240px; height: 240px; right: -90px; bottom: -110px;
   border-radius: 50%;
-  border: 1px solid rgba(250, 244, 228, .14);
-  box-shadow: 0 0 0 26px rgba(250, 244, 228, .05);
+  border: 1px solid rgba(74, 43, 9, .16);
+  box-shadow: 0 0 0 26px rgba(255, 252, 240, .16);
   pointer-events: none;
 }
 .cd-label {
-  font-size: 11.5px; letter-spacing: 4px; opacity: .72;
+  font-size: 11.5px; letter-spacing: 4px; opacity: .7;
   position: relative; z-index: 2;
 }
 .cd-num {
   font-weight: 900; font-size: 118px; line-height: 1;
   margin: 10px 0 0; letter-spacing: -2px;
   position: relative; z-index: 2;
-  text-shadow: 0 14px 30px rgba(0, 0, 0, .3);
+  text-shadow: 0 14px 30px rgba(140, 70, 8, .28);
 }
-.cd-unit { font-size: 21px; margin-top: -4px; opacity: .9; position: relative; z-index: 2; }
+.cd-unit { font-size: 21px; margin-top: -4px; opacity: .85; position: relative; z-index: 2; }
 .cd-meta {
-  font-size: 11px; letter-spacing: 1px; opacity: .78;
+  font-size: 11px; letter-spacing: 1px; opacity: .75;
   margin-top: 20px; padding-top: 16px;
-  border-top: 1px dashed rgba(250, 244, 228, .28);
+  border-top: 1px dashed rgba(74, 43, 9, .3);
   position: relative; z-index: 2;
 }
 
@@ -400,7 +407,7 @@ body::before {
 }
 .chk-fill {
   height: 100%; border-radius: 999px;
-  background: linear-gradient(90deg, var(--teal), #4d6484);
+  background: linear-gradient(90deg, var(--sun), var(--sun-d));
   transition: width .45s var(--ease);
 }
 .chk-count { font-size: 12px; color: var(--ink-3); letter-spacing: 1px; flex-shrink: 0; }
@@ -424,10 +431,10 @@ body::before {
 }
 .chk-item:hover .chk-box { border-color: var(--saffron); transform: scale(1.06); }
 .chk-item.is-done .chk-box {
-  background: var(--teal); border-color: var(--teal);
-  box-shadow: 0 4px 10px -4px rgba(55, 69, 92, .8);
+  background: var(--sun); border-color: var(--sun-d);
+  box-shadow: 0 4px 10px -4px rgba(224, 123, 31, .85);
 }
-.chk-item.is-done .chk-box::after { content: "✓"; color: var(--paper); font-size: 13px; font-weight: 700; }
+.chk-item.is-done .chk-box::after { content: "✓"; color: var(--sun-ink); font-size: 13px; font-weight: 700; }
 .chk-txt { font-size: 14px; }
 .chk-item.is-done .chk-txt { text-decoration: line-through; color: var(--ink-3); }
 
@@ -449,12 +456,13 @@ body::before {
   transition: background .18s var(--ease);
 }
 .tl-head:hover { background: rgba(247, 239, 221, .7); }
+/* 日期牌用深棕當定錨色，今天那天才換成太陽色（見下方 .is-today） */
 .tl-num {
-  background: linear-gradient(155deg, var(--teal), var(--teal-d));
+  background: linear-gradient(155deg, var(--espresso), var(--espresso-d));
   color: var(--paper);
   border-radius: var(--r-sm); padding: 11px 6px;
   text-align: center;
-  box-shadow: 0 10px 20px -12px rgba(33, 42, 60, .95);
+  box-shadow: 0 10px 20px -12px rgba(36, 29, 21, .95);
 }
 .tl-day-label { font-size: 10px; letter-spacing: 2.5px; opacity: .75; }
 .tl-day-n { font-weight: 900; font-size: 30px; line-height: 1; margin-top: 3px; }
@@ -531,7 +539,7 @@ body::before {
 }
 .food-h-bar { width: 7px; height: 24px; border-radius: 99px; background: var(--saffron); flex-shrink: 0; }
 .food-h.saffron .food-h-bar { background: linear-gradient(180deg, var(--saffron), var(--gold)); }
-.food-h.teal .food-h-bar { background: linear-gradient(180deg, #4d6484, var(--teal-d)); }
+.food-h.teal .food-h-bar { background: linear-gradient(180deg, var(--sun-l), var(--sun-d)); }
 .food-h.wine .food-h-bar { background: linear-gradient(180deg, var(--wine), var(--wine-d)); }
 
 /* ==========================================================
@@ -572,7 +580,7 @@ body::before {
 .shop-type {
   position: absolute; top: 17px; right: 17px;
   font-size: 10px; letter-spacing: 1.5px; padding: 4px 10px;
-  background: var(--teal-bg); color: var(--teal-d);
+  background: var(--sun-bg); color: var(--sun-deep);
   border-radius: 999px; font-weight: 700;
 }
 .shop-name { font-weight: 700; font-size: 18px; margin-bottom: 6px; padding-right: 66px; line-height: 1.4; }
@@ -704,8 +712,8 @@ body::before {
 .book-pill.is-none { color: var(--ink-3); }
 .book-pill.is-todo { background: var(--gold-bg); color: var(--saffron-d); border-color: var(--saffron-l); }
 .book-pill.is-booked {
-  background: var(--teal); color: var(--paper); border-color: var(--teal);
-  box-shadow: 0 6px 14px -8px rgba(55, 69, 92, .9);
+  background: var(--sun); color: var(--sun-ink); border-color: var(--sun-d);
+  box-shadow: 0 6px 14px -8px rgba(224, 123, 31, .9);
 }
 
 /* block-title needs to be flex now */
@@ -743,7 +751,7 @@ body::before {
 .wd-d { font-size: 10px; color: var(--ink-3); }
 .wd-i { font-size: 19px; margin: 4px 0; line-height: 1; }
 .wd-t { font-size: 11px; font-weight: 700; letter-spacing: -.2px; }
-.wd-p { font-size: 10px; color: var(--teal); }
+.wd-p { font-size: 10px; color: var(--rain); }
 
 /* Exchange */
 .rate-big { font-weight: 700; font-size: 26px; color: var(--saffron-d); margin-bottom: 14px; letter-spacing: -.5px; }
@@ -779,12 +787,12 @@ body::before {
 .fh-hotel { border-left: 1px dashed var(--line); padding-left: 26px; }
 .fh-map {
   display: inline-block; margin-top: 8px;
-  font-size: 12px; color: var(--teal); font-weight: 700;
+  font-size: 12px; color: var(--sun-deep); font-weight: 700;
   text-decoration: none;
-  padding: 8px 13px; border-radius: 999px; background: var(--teal-bg);
+  padding: 8px 13px; border-radius: 999px; background: var(--sun-bg);
   transition: all .18s var(--ease);
 }
-.fh-map:hover { background: var(--teal); color: var(--paper); transform: translateY(-1px); }
+.fh-map:hover { background: var(--sun); color: var(--sun-ink); transform: translateY(-1px); }
 
 /* food card foot */
 .food-foot, .spa-foot { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line-soft); }
@@ -857,13 +865,13 @@ body::before {
 .bud-total { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 16px; margin-top: 24px; }
 .bud-total-card { padding: 20px 22px; }
 .bud-total-card.primary {
-  background: linear-gradient(155deg, var(--teal), var(--teal-d));
-  color: var(--paper);
-  border-color: var(--teal-d);
-  box-shadow: var(--sh-2);
+  background: linear-gradient(155deg, var(--sun-l), var(--sun) 55%, var(--sun-d));
+  color: var(--sun-ink);
+  border-color: var(--sun-d);
+  box-shadow: 0 14px 30px -16px rgba(224, 123, 31, .8);
 }
-.bud-total-card.primary .bud-total-l { color: rgba(250, 244, 228, .72); }
-.bud-total-card.primary .bud-total-thb { color: rgba(250, 244, 228, .72); }
+.bud-total-card.primary .bud-total-l { color: rgba(74, 43, 9, .68); }
+.bud-total-card.primary .bud-total-thb { color: rgba(74, 43, 9, .68); }
 .bud-total-l { font-size: 11px; letter-spacing: 2px; color: var(--ink-3); text-transform: uppercase; }
 .bud-total-v { font-weight: 700; font-size: 28px; margin: 5px 0 2px; letter-spacing: -.5px; }
 .bud-total-thb { font-size: 12px; color: var(--ink-3); }
@@ -925,10 +933,14 @@ body::before {
 .day-card.is-today .dc-day { color: var(--saffron-d); }
 
 .tl-day.is-today {
-  border-color: var(--saffron-l);
-  box-shadow: 0 20px 44px -30px rgba(185, 96, 58, .75);
+  border-color: var(--sun);
+  box-shadow: 0 20px 44px -30px rgba(224, 123, 31, .8);
 }
-.tl-day.is-today .tl-num { background: linear-gradient(155deg, var(--saffron-l), var(--saffron-d)); }
+.tl-day.is-today .tl-num {
+  background: linear-gradient(155deg, var(--sun-l), var(--sun) 55%, var(--sun-d));
+  color: var(--sun-ink);
+  box-shadow: 0 10px 20px -12px rgba(224, 123, 31, .95);
+}
 
 /* ==========================================================
    Extras（備選清單）
@@ -960,7 +972,7 @@ body::before {
 }
 .xt-food { background: var(--gold-bg); color: var(--saffron-d); }
 .xt-shop { background: #dfe6dd; color: #3f5c47; }
-.xt-spa  { background: var(--teal-bg); color: var(--teal-d); }
+.xt-spa  { background: #e2e8ef; color: #435a72; }
 .xt-spot { background: var(--wine-bg); color: var(--wine-d); }
 .extras-name { font-weight: 700; font-size: 14.5px; color: var(--ink); flex: 1; min-width: 0; }
 .extras-price { font-size: 12px; color: var(--ink-3); }
@@ -1030,7 +1042,7 @@ body::before {
   }
   .tab::after { display: none; }
   .tab:hover { background: transparent; }
-  .tab.is-active { background: var(--gold-bg); color: var(--saffron-d); }
+  .tab.is-active { background: var(--sun-bg); color: var(--sun-deep); }
   .tab-ic { font-size: 20px; }
 }
 
