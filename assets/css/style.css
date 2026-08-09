@@ -157,13 +157,10 @@ body::before {
 .hdr-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; }
 .hdr-brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .brand-mark {
-  width: 50px; height: 50px; border-radius: 16px;
-  background: linear-gradient(150deg, var(--sky) 0%, var(--sky-deep) 100%);
-  color: var(--paper);
+  width: 50px; height: 50px;
   display: grid; place-items: center;
-  font-size: 24px; line-height: 1;
+  font-size: 38px; line-height: 1;
   flex-shrink: 0;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, .3) inset, 0 10px 22px -12px rgba(47, 86, 128, .9);
   transition: transform .3s var(--ease);
 }
 .hdr:hover .brand-mark { transform: rotate(-6deg) scale(1.04); }
@@ -289,7 +286,7 @@ body::before {
 /* 倒數卡：沙金底配深藍字，兩個主色同框 */
 .countdown-card {
   background: linear-gradient(155deg, #fdf0cd 0%, var(--sand) 45%, var(--sand-d) 100%);
-  color: var(--sky-deep);
+  color: var(--ink);
   border-radius: var(--r-xl); padding: 36px 28px;
   box-shadow: 0 30px 60px -30px rgba(160, 130, 60, .6), 0 2px 0 rgba(255, 255, 255, .55) inset;
   text-align: center;
@@ -306,7 +303,7 @@ body::before {
   content: ""; position: absolute;
   width: 240px; height: 240px; right: -90px; bottom: -110px;
   border-radius: 50%;
-  border: 1px solid rgba(47, 86, 128, .18);
+  border: 1px solid rgba(35, 32, 26, .12);
   box-shadow: 0 0 0 26px rgba(255, 253, 245, .3);
   pointer-events: none;
 }
@@ -318,13 +315,13 @@ body::before {
   font-weight: 900; font-size: 118px; line-height: 1;
   margin: 10px 0 0; letter-spacing: -2px;
   position: relative; z-index: 2;
-  text-shadow: 0 14px 30px rgba(47, 86, 128, .22);
+  text-shadow: 0 14px 30px rgba(35, 32, 26, .2);
 }
 .cd-unit { font-size: 21px; margin-top: -4px; opacity: .85; position: relative; z-index: 2; }
 .cd-meta {
   font-size: 11px; letter-spacing: 1px; opacity: .75;
   margin-top: 20px; padding-top: 16px;
-  border-top: 1px dashed rgba(47, 86, 128, .32);
+  border-top: 1px dashed rgba(35, 32, 26, .28);
   position: relative; z-index: 2;
 }
 
@@ -1060,7 +1057,7 @@ body::before {
   .page-en { display: block; margin-left: 0; margin-top: 4px; font-size: 12px; }
   .h2 { font-size: 20px; margin: 36px 0 14px; }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .brand-mark { width: 44px; height: 44px; border-radius: 14px; font-size: 21px; }
+  .brand-mark { width: 42px; height: 42px; font-size: 32px; }
   .brand-zh { font-size: 18px; }
   .brand-en { font-size: 10px; }
   .countdown-card { padding: 28px 22px; }
