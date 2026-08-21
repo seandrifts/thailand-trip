@@ -54,12 +54,13 @@ window.TRIP = {
     {
       day: 4, date: "8/21", weekday: "五", title: "巷子夠窄，才能聽見曼谷的呼吸",
       theme: "Old Bangkok",
-      summary: "Saphan Taksin → Sarnies → Warehouse 30 → Talat Noi → 唐人街",
+      summary: "Saphan Taksin → 王子戲院豬肉粥 → Warehouse 30 → Everyday Mookrata → Talat Noi → 唐人街",
       blocks: [
         { time: "早上", icon: "🚇", title: "BTS Saphan Taksin", detail: "起點，從這裡開始今天的老城漫遊" },
-        { time: "早餐", icon: "☕", title: "Sarnies Bangkok", mapurl: "https://maps.app.goo.gl/E7ARJCK3mTp3EFQR7", detail: "河岸邊的網紅咖啡館，早餐選項多，裝潢工業風，適合拍照" },
+        { time: "早餐", icon: "🥣", title: "王子戲院豬肉粥", mapurl: "https://maps.app.goo.gl/999pK6GeN5fGvGKf9", detail: "石龍軍路上的老字號粥店，就在王子戲院旁邊，炭火慢熬的豬肉粥綿密順口，加顆糖心蛋配油條最對味" },
         { time: "上午", icon: "🏭", title: "Warehouse 30", detail: "二戰時期倉庫改建的文創空間，有咖啡廳、藝廊跟小店，很有感覺" },
-        { time: "上午", icon: "🗺️", title: "Talat Noi", detail: "曼谷最古老的社區之一，巷弄裡的街頭藝術跟老屋值得慢慢逛" },
+        { time: "中午", icon: "🍖", title: "Everyday Mookrata Riverside", mapurl: "https://maps.app.goo.gl/pTEqCeYkr2oLgcjw8", detail: "泰式炭烤吃到飽，中間烤肉、外圈涮湯一鍋兩吃，就在河岸邊，從 Warehouse 30 走過去不遠" },
+        { time: "下午", icon: "🗺️", title: "Talat Noi", detail: "曼谷最古老的社區之一，巷弄裡的街頭藝術跟老屋值得慢慢逛" },
         { time: "下午", icon: "🏛️", title: "蘇恒泰宅邸", detail: "百年華商豪宅，融合中西建築風格，室內展覽很精彩" },
         { time: "下午", icon: "🚶", title: "嵩越路 Song Wat Road", detail: "曼谷老商業街，近年變成文青咖啡廳聚集地，新舊混搭" },
         { time: "晚上", icon: "🏮", title: "唐人街 Yaowarat", detail: "霓虹燈閃爍、海鮮大排檔、金器珠寶一條街，曼谷夜晚最熱鬧的地方之一" },
