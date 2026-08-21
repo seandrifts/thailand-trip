@@ -70,15 +70,15 @@ window.TRIP = {
     {
       day: 5, date: "8/22", weekday: "六", title: "鐵軌從市場中間穿過，每天都這樣",
       theme: "Day Trip",
-      summary: "噗市場 → 水門寺 → 美功鐵道市場 → 安帕瓦水上市場 → Chula Banthatthong",
+      summary: "噗市場 → 丹嫩莎朵水上市場 → 美功鐵道市場 → 安帕瓦水上市場 → Chula Banthatthong",
       blocks: [
-        { time: "早上", icon: "🏪", title: "噗市場 Talat Phlu", mapurl: "https://maps.app.goo.gl/QQYNyQtVkerQZfRz8", detail: "水門寺旁的在地早市，各種街頭小吃攤販聚集，包車出發前先繞進來逛逛，感受曼谷最市井的早晨" },
-        { time: "早上", icon: "🛕", title: "水門寺 Wat Pak Nam", detail: "包車出發，著名的玻璃佛塔，塔內五層樓的佛像跟壁畫超壯觀，免費入場" },
+        { time: "早上", icon: "🏪", title: "噗市場 Talat Phlu", mapurl: "https://maps.app.goo.gl/QQYNyQtVkerQZfRz8", detail: "昭披耶河西岸的在地早市，各種街頭小吃攤販聚集，包車出發前先繞進來逛逛，感受曼谷最市井的早晨" },
+        { time: "早上", icon: "🛶", title: "丹嫩莎朵水上市場 Damnoen Saduak", mapurl: "https://www.google.com/maps/search/?api=1&query=Damnoen+Saduak+Floating+Market", detail: "最經典的水上市場，搭長尾船穿梭水道，兩旁小船賣水果、椰子冰跟現煮小吃，越早去人越少也越涼快" },
         { time: "中午", icon: "🚂", title: "美功鐵道市場 Maeklong", mapurl: "https://maps.app.goo.gl/zhtKMawGZhsENaNY9", detail: "火車穿越市場的奇景，看火車來攤販迅速收傘，班次確認一下時刻表" },
         { time: "下午", icon: "🛥️", title: "安帕瓦水上市場 Amphawa", detail: "最有氣氛的水上市場，搭船遊河邊吃邊買，傍晚開始最熱鬧" },
         { time: "晚上", icon: "🍜", title: "Chula Banthatthong", mapurl: "https://maps.app.goo.gl/jTwxutwWBR5eTG259", detail: "回曼谷市區後的晚餐選擇，朱拉隆功大學周邊餐廳街" },
       ],
-      tips: "全程包車接送，水門寺 → 美功 → 安帕瓦一條龍不用擔心交通，司機會在附近等。",
+      tips: "全程包車接送，丹嫩莎朵 → 美功 → 安帕瓦一條龍不用擔心交通，司機會在附近等。丹嫩莎朵是早市，7–9 點最熱鬧，11 點後攤販會陸續收，建議天亮就出發。",
     },
     {
       day: 6, date: "8/23", weekday: "日", title: "一萬個攤位，一萬個下手的理由",
@@ -151,7 +151,7 @@ window.TRIP = {
       { type: "food", name: "王子戲院豬肉粥", area: "Charoen Krung / Bang Rak", note: "曼谷老城知名豬肉粥，4.3 分、3300 多則評論，就開在老戲院旁邊，稀飯滑嫩配料豐富，在地人的早餐或消夜選擇", mapurl: "https://maps.app.goo.gl/syxuLasCLiFGFydXA" },
       { type: "food", name: "Mother Roaster Talat Noi", area: "Talat Noi", note: "塔拉諾巷弄裡的質感咖啡館，4.4 分、1700 多則評論，自家烘焙豆，老倉庫改建的工業風空間，逛完街頭藝術進來坐一下很對味", mapurl: "https://maps.app.goo.gl/t9Nm1g2teviZoUvd8" },
     ]},
-    { day: 5, date: "8/22", weekday: "六", area: "水門寺一帶", items: [
+    { day: 5, date: "8/22", weekday: "六", area: "塔拉普路・班他通", items: [
       { type: "food", name: "Ni-Ang Shaved Ice Cream", area: "Talat Phlu", note: "塔拉普路在地刨冰攤，4.2 分近 900 則評論，以泰式古早味刨冰聞名，配料豐富多彩、口味道地，逛完噗市場附近就能找到，消暑必吃", mapurl: "https://maps.app.goo.gl/SjCrP5iRxTZ7szNa7" },
       { type: "food", name: "李寶玉 百年韭菜粿", area: "Talat Phlu", note: "百年老字號素食點心店，4.6 高分，韭菜粿以米漿皮包素餡蒸製而成，是傳統廣東早點，配上辣椒醬鹹甜交織，在地人才知道的口袋名單，早市限定遲到就沒了", mapurl: "https://maps.app.goo.gl/DXfr4ChFpdfhWrrYA" },
       { type: "spot", name: "Uruea Cafe Boat Pier", area: "Bangkok Yai", note: "昭披耶河畔的秘境咖啡碼頭，正對河中央大型佛像取景，是近年 IG 熱門打卡點，坐在木棧道喝飲料看河景，傳統長尾船不時穿梭而過，距塔拉普路步行可達", mapurl: "https://maps.app.goo.gl/eYLSiYxYXsDkQoxr9" },
@@ -180,7 +180,7 @@ window.TRIP = {
       { type: "BTS 空鐵", note: "市區最方便，買 Rabbit Card 儲值比較省" },
       { type: "MRT 地鐵", note: "藍線連接火車站、唐人街、Chatuchak" },
       { type: "Grab", note: "東南亞版 Uber，叫車最方便，多人叫 Grab XL" },
-      { type: "包車", note: "Day 5 已安排包車，水門寺 → 美功 → 安帕瓦全程接送" },
+      { type: "包車", note: "Day 5 已安排包車，丹嫩莎朵 → 美功 → 安帕瓦全程接送" },
     ],
     vat: "購物滿 2,000 THB 可在機場辦 VAT Refund 退稅（約 7%），結帳時索取 PP10 表格並保留收據，機場出境前在 Revenue Department 櫃檯辦理",
     emergency: [
